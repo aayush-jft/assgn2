@@ -24,10 +24,36 @@
                     <td><b>WEBSITE</b></td>
                     <td><b>COMPANY</b></td>
                     <td><b>CITY</b></td>
+                    <td><b>EDIT</b></td>
+                    <td><b>DELETE</b></td>
                 </tr>
             </thead>
             <tbody id="userData"></tbody>
         </table>
+
+        <button id="addBtn" type="button" class="btn btn-dark btn-lg" style="text-align: center; float: right; margin-right: 100px; margin-top: 30px;">Add</button>
+
+        <!-- Pop up for adding user -->
+        <div class="container">
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <h3>Add User</h3>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            Body
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary">Cancel</button>
+                            <button type="button" class="btn btn-success">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
