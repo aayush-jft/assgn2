@@ -61,6 +61,23 @@ fetch(url)
             tr.append(td10);
             
             document.getElementById("userData").appendChild(tr);
+
+            // edit user
+            editBtn.addEventListener("click", function() {
+                document.getElementById("heading").innerHTML = "Edit User";
+                document.getElementById("modalBtn").innerHTML = "Save";
+                $("#myModal").modal();
+            });
+
+            // delete user
+            deleteBtn.addEventListener("click", function() {
+                $("#dltModal").modal();
+                $("#dltBtn").click(function() {
+                    var ids = temp.id;
+                    document.getElementById("userData").deleteRow(ids);
+                });
+            });
+
         })
     })
     .catch((err) => {
@@ -69,6 +86,8 @@ fetch(url)
 
 $(document).ready(function() {
     $("#addBtn").click(function() {
+        document.getElementById("heading").innerHTML = "Add User";
+        document.getElementById("modalBtn").innerHTML = "Add";
         $("#myModal").modal();
         //localStorage.setItem(`${user.id}`, JSON.stringify(user));
     });

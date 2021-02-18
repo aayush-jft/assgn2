@@ -40,15 +40,55 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <div class="modal-title">
-                                <h3>Add User</h3>
+                                <h3 id="heading"></h3>
                             </div>
                         </div>
                         <div class="modal-body">
-                            Body
+                            <div class="form-group">
+                                <label>Id</label>
+                                <input type="number" placeholder="Enter Id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Enter Name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" placeholder="Enter Username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Enter Email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" placeholder="Enter Phone Number" class="form-control">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary">Cancel</button>
-                            <button type="button" class="btn btn-success">Add</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button id="modalBtn" type="button" class="btn btn-success"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="modal" id="dltModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <h3 id="heading">Warning...</h3>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button id="dltBtn" type="button" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
                 </div>
