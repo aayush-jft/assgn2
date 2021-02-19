@@ -76,7 +76,6 @@ fetch(url)
 
 // add new user 
 function addItem() {
-    console.log("add btn clicked");
     document.getElementById("heading").innerHTML = "Add User";
     document.getElementById("modalBtn").innerHTML = "Add";
     $("#myModal").modal();
