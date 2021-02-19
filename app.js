@@ -63,10 +63,22 @@ fetch(url)
             document.getElementById("userData").appendChild(tr);
 
             // edit user
-            editBtn.addEventListener("click", () => editItem());
+            editBtn.addEventListener("click", () => {
+                document.getElementById("heading").innerHTML = "Edit User";
+                document.getElementById("modalBtn").innerHTML = "Save";
+                $("#myModal").modal();
+                document.getElementById("iptName").innerHTML = temp.name;
+            });
 
             // delete user
-            deleteBtn.addEventListener("click", () => deleteItem());
+            deleteBtn.addEventListener("click", () => {
+                $("#dltModal").modal();
+                $("#dltBtn").click(() => {
+                    var ids = temp.id;
+                    //localStorage.removeItem(ids);
+                    document.getElementById("userData").deleteRow(ids);
+                });
+            });
 
         })
     })
@@ -79,21 +91,7 @@ function addItem() {
     document.getElementById("heading").innerHTML = "Add User";
     document.getElementById("modalBtn").innerHTML = "Add";
     $("#myModal").modal();
-}
-
-// edit user
-function editItem() {
-    document.getElementById("heading").innerHTML = "Edit User";
-    document.getElementById("modalBtn").innerHTML = "Save";
-    $("#myModal").modal();
-}
-
-// delete user
-function deleteItem() {
-    $("#dltModal").modal();
-    document.getElementById("dltBtn").click(function() {
-        var ids = temp.id;
-        localStorage.removeItem(ids);
-        document.getElementById("userData").deleteRow(ids);
+    document.getElementById("modalBtn").addEventListener("click", () => {
+        localStorage.setItem("1", "aayush");
     });
 }
