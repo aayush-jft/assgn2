@@ -77,10 +77,9 @@ fetch(url)
 // add new user 
 function addItem() {
     console.log("add btn clicked");
-    //document.getElementById("heading").innerHTML = "Add User";
-    //document.getElementById("modalBtn").innerHTML = "Add";
+    document.getElementById("heading").innerHTML = "Add User";
+    document.getElementById("modalBtn").innerHTML = "Add";
     document.getElementById("myModal").showModal();
-    //$("#myModal").modal();
 }
 
 // edit user
@@ -88,7 +87,6 @@ function editItem() {
     document.getElementById("heading").innerHTML = "Edit User";
     document.getElementById("modalBtn").innerHTML = "Save";
     document.getElementById("myModal").showModal();
-    //document.getElementById("iptName").innerHTML = temp.name;
 }
 
 // delete user
