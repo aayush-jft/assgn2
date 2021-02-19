@@ -9,9 +9,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="index.js"></script>
+        <script type="text/javascript" src="app.js"></script>
         <link rel="stylesheet" href="index.css">
     </head>
+    
     <body>
         <table class="table table-striped table-bordered text-center">
             <thead style="background: #78909c;">
@@ -31,7 +32,7 @@
             <tbody id="userData"></tbody>
         </table>
 
-        <button id="addBtn" type="button" class="btn btn-dark btn-lg" style="text-align: center; float: right; margin-right: 100px; margin-top: 30px;">Add</button>
+        <button type="button" onclick="addItem()" class="btn btn-dark btn-lg" style="text-align: center; float: right; margin-right: 100px; margin-top: 30px;">Add</button>
 
         <!-- Pop up for adding user -->
         <div class="container">
@@ -46,28 +47,28 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Id</label>
-                                <input type="number" placeholder="Enter Id" class="form-control">
+                                <input id="iptId" type="number" placeholder="Enter Id" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Enter Name" class="form-control">
+                                <input id="iptName" type="text" placeholder="Enter Name" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" placeholder="Enter Username" class="form-control">
+                                <input id="iptUsername" type="text" placeholder="Enter Username" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" placeholder="Enter Email" class="form-control">
+                                <input type="iptEmail" placeholder="Enter Email" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="tel" placeholder="Enter Phone Number" class="form-control">
+                                <input type="iptTel" placeholder="Enter Phone Number" class="form-control">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button id="modalBtn" type="button" class="btn btn-success"></button>
+                            <button id="modalBtn" type="button" class="btn btn-success" >Add</button>
                         </div>
                     </div>
                 </div>

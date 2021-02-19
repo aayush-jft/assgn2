@@ -3,9 +3,9 @@ const url = "https://jsonplaceholder.typicode.com/users";
 fetch(url)
     .then((res) => res.json())
     .then((data) => {
-        data.forEach(function(user) {
+        data.forEach((user) => {
 
-            localStorage.setItem(`${user.id}`, JSON.stringify(user));
+            localStorage.setItem(user.id, JSON.stringify(user));
             var id = localStorage.getItem(user.id);
             var temp = JSON.parse(id);
 
@@ -63,20 +63,10 @@ fetch(url)
             document.getElementById("userData").appendChild(tr);
 
             // edit user
-            editBtn.addEventListener("click", function() {
-                document.getElementById("heading").innerHTML = "Edit User";
-                document.getElementById("modalBtn").innerHTML = "Save";
-                $("#myModal").modal();
-            });
+            editBtn.addEventListener("click", () => editItem());
 
             // delete user
-            deleteBtn.addEventListener("click", function() {
-                $("#dltModal").modal();
-                $("#dltBtn").click(function() {
-                    var ids = temp.id;
-                    document.getElementById("userData").deleteRow(ids);
-                });
-            });
+            deleteBtn.addEventListener("click", () => deleteItem());
 
         })
     })
@@ -84,11 +74,29 @@ fetch(url)
         document.write(err);
     });
 
-$(document).ready(function() {
-    $("#addBtn").click(function() {
-        document.getElementById("heading").innerHTML = "Add User";
-        document.getElementById("modalBtn").innerHTML = "Add";
-        $("#myModal").modal();
-        //localStorage.setItem(`${user.id}`, JSON.stringify(user));
+// add new user 
+function addItem() {
+    console.log("add btn clicked");
+    //document.getElementById("heading").innerHTML = "Add User";
+    //document.getElementById("modalBtn").innerHTML = "Add";
+    document.getElementById("myModal").showModal();
+    //$("#myModal").modal();
+}
+
+// edit user
+function editItem() {
+    document.getElementById("heading").innerHTML = "Edit User";
+    document.getElementById("modalBtn").innerHTML = "Save";
+    document.getElementById("myModal").showModal();
+    //document.getElementById("iptName").innerHTML = temp.name;
+}
+
+// delete user
+function deleteItem() {
+    document.getElementById("dltModal").modal();
+    document.getElementById("dltBtn").click(function() {
+        var ids = temp.id;
+        localStorage.removeItem(ids);
+        document.getElementById("userData").deleteRow(ids);
     });
-});
+}
